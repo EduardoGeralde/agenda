@@ -19,6 +19,8 @@ public class AddContactServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 	@Override
+	//instead using service, the doPost method only accept post methods 
+	//(inside body protocol HTTP)
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 										throws ServletException, IOException {
 		//search the writer
