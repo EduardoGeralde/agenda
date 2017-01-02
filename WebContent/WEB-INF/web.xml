@@ -10,5 +10,14 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 	
+		<servlet>
+		<servlet-name>helloServlet</servlet-name>
+		<servlet-class>com.eduardoportfolio.servlet.HelloServletWorld</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
+		<url-pattern>/helloServlet</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
