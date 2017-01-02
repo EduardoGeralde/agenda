@@ -9,9 +9,9 @@ public class ConnectionFactory {
 	public Connection getConnection(){
 		try {
 			//create new connection
+			Class.forName("com.mysql.jdbc.Driver");
 			return DriverManager.getConnection("jdbc:mysql://localhost/jdbc", "root", "password");
-			
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			throw new RuntimeException (e);
 		}
 	}
