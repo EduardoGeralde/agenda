@@ -26,7 +26,7 @@ public class ContactDao {
 		//string with SQL command
 		String sql = "insert into contacts (name, email, address, birthDate) values (?,?,?,?)";
 
-		try {
+		try { 
 			// prepare statement for insertion
 			PreparedStatement stmt = connection.prepareStatement(sql);
 
@@ -43,8 +43,8 @@ public class ContactDao {
 			connection.close();
 
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
+			throw new DAOException(e);
+		} 
 	}
 
 	public List<Contact> getList() {
@@ -148,8 +148,10 @@ public class ContactDao {
 	public void delete(Contact contact){
 		
 		try{
+			// prepare statement for delete
 			PreparedStatement stmt = connection.prepareStatement("delete from contacts where id=?");
 			
+			// set the values
 			stmt.setLong(1, contact.getId());
 			
 			stmt.execute();
