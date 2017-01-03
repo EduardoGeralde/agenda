@@ -6,6 +6,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +20,19 @@ import com.eduardoportfolio.jdbc.model.Contact;
 public class AddContactServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
+	//this method allows us to load  in the initialization of the servlet some files of 
+	//configuration of the application, or something else needed
+	public void init (ServletConfig config) throws ServletException {
+		super.init(config);
+		log("Starting the servlet");
+	}
+	
+	//we  can also release possible resources that we are holding
+	public void destroy(){
+		super.destroy();
+		log("Destroying the servlet");
+	}
+	
 	@Override
 	//instead using service, the doPost method only accept post methods 
 	//(inside body protocol HTTP)
