@@ -10,7 +10,7 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 	
-		<servlet>
+	<servlet>
 		<servlet-name>helloServlet</servlet-name>
 		<servlet-class>com.eduardoportfolio.servlet.HelloServletWorld</servlet-class>
 	</servlet>
@@ -20,4 +20,14 @@
 		<url-pattern>/helloServlet</url-pattern>
 	</servlet-mapping>
 	
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/erro.html</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+
 </web-app>
