@@ -10,13 +10,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Contact List</title>
+<style type="text/css">
+td {
+	border: 1px solid black;
+}
+
+thead th {
+	border: 1px dashed blue;
+}
+</style>
 </head>
 <body>
 	<table>
 		<%
 			ContactDao dao = new ContactDao();
 			List<Contact> contacts = dao.getList();
-
 			for (Contact contact : contacts) {
 		%>
 		<tr>
