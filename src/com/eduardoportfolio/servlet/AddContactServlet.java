@@ -16,6 +16,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.eduardoportfolio.jdbc.dao.ContactDao;
 import com.eduardoportfolio.jdbc.model.Contact;
 
+/**
+ * @author Eduardo Geralde Neto
+ * 
+ * This class shows how Servlets can works. We have some problems using Servlets, like, it strongly mixing
+ * HTML with Java, and if we want to list all contacts, all this list would be doing through out.print().
+ * We can imagine  the maintenance of all that code. And if we want to add a new column in the table?
+ * We have better ways to do this  functionalities.
+ */
+
 @WebServlet("/addContact")
 public class AddContactServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
@@ -70,7 +79,7 @@ public class AddContactServlet extends HttpServlet{
 		ContactDao dao = new ContactDao();
 		dao.create(contact);
 		
-		//print the name of the contact that was add
+		//print the name of the contact that was add in HTML
 		out.println("<html>");
 		out.println("<body>");
 		out.println("Contact " + contact.getName() + " added successfully ");
