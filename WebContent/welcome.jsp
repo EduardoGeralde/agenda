@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Testing Print Methods</title>
 </head>
 <body>
-	<%--This is a JSP page --%>
+
+	<%--Just testing the print methods in JSP : out.println, equal sign (=) and System.out.println--%>
 
 	<%
 		String message = "Welcome to the Agenda System !";
