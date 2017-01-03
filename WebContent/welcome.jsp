@@ -8,7 +8,8 @@
 </head>
 <body>
 
-	<%--Just testing the print methods in JSP : out.println, equal sign (=) and System.out.println--%>
+<%--Created by Eduardo Geralde Neto 
+-Just testing the print methods in JSP : out.println, equal sign (=) and System.out.println--%>
 
 	<%
 		String message = "Welcome to the Agenda System !";
