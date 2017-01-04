@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * This class is a simple example that help us to fill that in according to the specification of Servlets, by 
+ * This class is a simple example that help us to see that in according to the specification of Servlets, by 
  * default, there is only a single instance of each Servlet declared. When the request arrives to the Servlet, 
  * a new THREAD is opened on that instance that already exists.
  * Therefore, sharing objects between threads can bring us serious problems.

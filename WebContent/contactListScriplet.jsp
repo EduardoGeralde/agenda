@@ -29,7 +29,13 @@ thead th {
 </style>
 </head>
 <body>
-	<table>
+	<table border="1" width="100%">
+		<tr bgcolor="aaeeee" align="center">
+			<td>Name</td>
+			<td>Email</td>
+			<td>Address</td>
+			<td>Date of Birth</td>
+		</tr>
 		<%
 			ContactDao dao = new ContactDao();
 			List<Contact> contacts = dao.getList();
@@ -39,7 +45,7 @@ thead th {
 			<td><%=contact.getName()%></td>
 			<td><%=contact.getEmail()%></td>
 			<td><%=contact.getAddress()%></td>
-			<td><%=new SimpleDateFormat("dd/MM/yyyy").format(contact.getBirthDate().getTime())%></td>
+			<td align="center"><%=new SimpleDateFormat("dd/MM/yyyy").format(contact.getBirthDate().getTime())%></td>
 		</tr>
 		<%
 			}
