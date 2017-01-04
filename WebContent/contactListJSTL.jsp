@@ -5,6 +5,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<!-- Importing header  -->
+<c:import url="header.jsp"/>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,7 +30,7 @@
 			<tr bgcolor="#${id.count % 2 == 0 ? 'c0c0c0' : 'ffffff' }">
 				<td>${contact.name}</td>
 				<td>
-				<!-- If contact has email, insert link to it, if  not, show  "contact missing email" in this contact -->
+				<!-- If contact has email, insert link to it, if  not, show  "contact missing email" in contact list-->
 				<c:choose>
 					<c:when test="${not empty contact.email}">
 					<a href="mailto:${contact.email}">${contact.email}</a>
@@ -47,5 +50,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<!-- importing footer -->
+	<c:import url="footer.jsp"/>
 </body>
 </html>
