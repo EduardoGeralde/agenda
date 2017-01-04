@@ -9,7 +9,7 @@
 <body>
 
 <img src="images/scheduleLogo.png"/>
-<h2> Contacts schedule</h2>
+<h2> Contact schedule</h2>
 
 </body>
 </html>
