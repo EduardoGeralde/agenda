@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<img src="images/scheduleLogo.png"/>
-<h2> Contacts schedule of Eduardo Geralde Neto</h2>
+<hr />
+Copyright 2016 - All rights reserved
 
 </body>
 </html>
