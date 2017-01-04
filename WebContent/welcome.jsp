@@ -12,7 +12,7 @@
 -Just testing the print methods in JSP : out.println, equal sign (=) and System.out.println--%>
 
 	<%
-		String message = "Welcome to the Agenda System !";
+		String message = "Welcome to the Schedule System !";
 	%>
 	<%
 		out.println(message);
