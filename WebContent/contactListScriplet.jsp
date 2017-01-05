@@ -3,11 +3,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%--Created by Eduardo Geralde Neto
--After pass through the Servlets, where it was mixing Java with HTML. The reading was confusing
--and the code difficult to maintain . Now let's have a look through the JSP with scriplets.
--There are still many applications on the market today made entirely using scriptlets with some code in the
--middle of HTML. In this simple case, JSP still mixing HTML with Java, but we can evolve much more, at
--the point that we won't do it anymore --%>
+After pass through the Servlets, where it was mixing Java with HTML. The reading was confusing
+and the code difficult to maintain . Now let's have a look through the JSP with scriplets. There are still
+ many applications on the market today made entirely using scriptlets with some code in the middle of 
+ HTML. In this simple case, JSP still mixing HTML with Java, but we can evolve much more, at the point 
+ that we won't do it anymore --%>
 
 <%@ page
 	import="java.util.*, 

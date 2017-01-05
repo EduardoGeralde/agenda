@@ -2,6 +2,10 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+<%--This contact list uses expression language and JSTL, to do almost the same thing of the contact list
+with scriplets. But if we look at this code, we can read and  maintain more easily. Notice that code we do
+not mix HTML and Java anymore, making the code more elegant. --%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -18,7 +22,7 @@
 	<!-- create a DAO -->
 	<jsp:useBean id="dao" class="com.eduardoportfolio.jdbc.dao.ContactDao" />
 	<table border="1" width="100%">
-		<tr bgcolor="aaeeee" align="center">
+		<tr bgcolor="ff6600" align="center">
 			<td>Name</td>
 			<td>Email</td>
 			<td>Address</td>
@@ -43,9 +47,7 @@
 				<td>${contact.address}</td>
 				<td align="center">
 				<!-- formatting date for the pattern that we want -->
-				<fmt:formatDate
-						value="${contact.birthDate.time}" var="formattedDate" type="date"
-						pattern="dd-MM-yyyy" /> ${formattedDate}
+				<fmt:formatDate value="${contact.birthDate.time}" pattern="dd-MM-yyyy" /> 
 				</td>
 			</tr>
 		</c:forEach>
