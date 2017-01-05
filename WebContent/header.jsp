@@ -15,5 +15,7 @@
 <img src="<c:url value="/images/scheduleLogo.jpeg"/>"/>
 <h2> Contacts schedule of Eduardo Geralde Neto</h2>
 
+<hr />
+
 </body>
 </html>
