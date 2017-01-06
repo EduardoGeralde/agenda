@@ -7,9 +7,9 @@
 
 <html>
 <head>
-<link href="css/jquery.css" rel="stylesheet">
-<script src="js/jquery.js"></script>
-<script src="js/jquery-ui.js"></script>
+<link href="/schedule/WebContent/css/base/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+<script src="/schedule/WebContent/js/jquery-1.8.3.js"></script>
+<script src="/schedule/WebContent/js/jquery-ui-1.9.2.custom.js"></script>
 <title>Add Contacts</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
 		Name: <input type="text" name="name" /> <br /> 
 		E-mail: <input type="text" name="email" /> <br /> 
 		Address: <input type="text" name="address" /> <br /> 
-		Birth Date: <ed:inputDate id="birthDate" /> <br /> 
+		Birth Date: <ed:inputDate id="birthDate"/> <br /> 
 		<hr />
 		<input type="submit" value="Save" />
 	</form>
