@@ -31,12 +31,14 @@ public class AddContactServlet extends HttpServlet{
 
 	//this method allows us to load  in the initialization of the servlet some files of 
 	//configuration of the application, or something else needed
+	@Override
 	public void init (ServletConfig config) throws ServletException {
 		super.init(config);
 		log("Starting the servlet");
 	}
 	
 	//we  can also release possible resources that we are holding
+	@Override
 	public void destroy(){
 		super.destroy();
 		log("Destroying the servlet");

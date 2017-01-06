@@ -8,8 +8,8 @@
 <html>
 <head>
 <link href=<c:url value="css/jquery.css"/> rel="stylesheet">
-<script src="/js/jquery.js"></script>
-<script src="/js/jquery-ui.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
 </head>
 <body>
 	<c:import url="header.jsp" />

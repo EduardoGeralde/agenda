@@ -6,5 +6,5 @@
 
 <input type="text" id="${id}" name="${id}"/>
 <script>
-$("#${id}").datapicker({dateFormat: 'dd/mm/yy'});
+$("#${id}").datepicker({dateFormat: 'dd/mm/yy'});
 </script>
