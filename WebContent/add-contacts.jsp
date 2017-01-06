@@ -7,10 +7,9 @@
 
 <html>
 <head>
-<link href="/schedule/WebContent/css/base/jquery-ui-1.9.2.custom.css" rel="stylesheet">
-<script src="/schedule/WebContent/js/jquery-1.8.3.js"></script>
-<script src="/schedule/WebContent/js/jquery-ui-1.9.2.custom.js"></script>
-<title>Add Contacts</title>
+<link href="css/base/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.js"></script>
 </head>
 <body>
 	<c:import url="header.jsp" />
