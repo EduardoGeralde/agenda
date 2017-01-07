@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -81,12 +82,19 @@ public class AddContactServlet extends HttpServlet{
 		ContactDao dao = new ContactDao();
 		dao.create(contact);
 		
-		//print the name of the contact that was add in HTML
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Contact " + contact.getName() + " added successfully ");
-		out.println("</body>");
-		out.println("</html>");
+		//print the name of the contact that was added, in HTML
+		//out.println("<html>");
+		//out.println("<body>");
+		//out.println("Contact " + contact.getName() + " added successfully ");
+		//out.println("</body>");
+		//out.println("</html>");
+		
+		//but, we are mixing HTML with Java. Let's improve this code
+		
+		//Now we going to redirect for another JSP and delete all HTML
+		//in this code. Let's put java in Servlets and HTML in JSP.
+		RequestDispatcher rd = request.getRequestDispatcher("/contactAdded.jsp");
+		rd.forward(request, response);
 		
 	}
 	
