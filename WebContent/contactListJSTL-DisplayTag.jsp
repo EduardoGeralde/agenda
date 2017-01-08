@@ -13,18 +13,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Contact List with DisplayTag</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/contactList.css" type="text/css"/>
 </head>
 <body>
 
 	<!-- create a DAO -->
 	<jsp:useBean id="dao" class="com.eduardoportfolio.jdbc.dao.ContactDao" />
 
-	<!-- Using displayTag to show the contact list -->
-	<display:table name="${dao.list}" pagesize="10">
+	<!-- Using displayTag to show the contact list with CSS file -->
+	<display:table name="${dao.list}" sort ="list" pagesize="10" class="contactList.css">
 		<display:column property="name" title="Name" />
 		<display:column property="email" title="Email"/>
 		<display:column property="address" title="Address" />
-		<display:column property="birthDate.time" title= "Date of Birth" format="{0,date,dd-MM-yyyy}" />
+		<display:column property="birthDate.time" title= "Date of Birth" format="{0,date,dd-MM-yyyy}"  />
 	</display:table>
 
 	<!-- importing footer -->
