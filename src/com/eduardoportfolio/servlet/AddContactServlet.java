@@ -20,10 +20,14 @@ import com.eduardoportfolio.jdbc.model.Contact;
 /**
  * @author Eduardo Geralde Neto
  * 
- * This class shows how Servlets can works. We have some problems using Servlets, like, it strongly mixing
- * HTML with Java, and if we want to list all contacts, all this list would be doing through out.print().
- * We can imagine  the maintenance of all that code. And if we want to add a new column in the table?
- * We have better ways to do this  functionalities.
+ * This Servlet was created to show how a Servlet could work, generating HTML through PrintWriter. 
+ * However, mixing HTML with Java is not recommended because it makes difficult to read and 
+ * maintain the application code. Let's then remove the HTML code and we'll redirect with 
+ * RequestDispatcher to a JSP page that will generate all the HTML code that we need. This example 
+ * application only gives us an idea of some possible ways and tools. Let's evolve our application by 
+ * separating actions (business rules) into different classes with the same Logic interface. 
+ * We will also create a Servlet Controller to control the flow of actions, and after executing the action, 
+ * will make it redirects to JSP pages.
  */
 
 @WebServlet("/addContact")
