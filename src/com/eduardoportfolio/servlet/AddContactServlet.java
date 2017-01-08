@@ -46,8 +46,7 @@ public class AddContactServlet extends HttpServlet{
 	}
 	
 	@Override
-	//instead using service, the doPost method only accept post methods 
-	//(inside body protocol HTTP)
+	//instead using service, the doPost method only accept post methods (inside body)
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 										throws ServletException, IOException {
 		//search the writer

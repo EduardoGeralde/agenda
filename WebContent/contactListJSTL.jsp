@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<%--This contact list uses expression language and JSTL, to do almost the same thing of the contact list
-with scriplets. But if we look at this code, we can read and  maintain more easily. Notice that code we do
+<%--This contact list uses expression language and JSTL, to do almost the same thing of the 
+contactListScriplet. But if we look at this code, we can read and  maintain more easily. Notice that code we do
 not mix HTML and Java anymore, making the code more elegant. --%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
