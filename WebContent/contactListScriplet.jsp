@@ -32,7 +32,7 @@ thead th {
 </head>
 <body>
 	<table border="1" width="100%">
-		<tr bgcolor="aaeeee" align="center">
+		<tr bgcolor="ff6600" align="center">
 			<td>Name</td>
 			<td>Email</td>
 			<td>Address</td>
