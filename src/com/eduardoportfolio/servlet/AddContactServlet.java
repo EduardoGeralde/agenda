@@ -94,7 +94,7 @@ public class AddContactServlet extends HttpServlet{
 		//out.println("</html>");
 		
 		//Dispatching to a JSP
-		RequestDispatcher rd = request.getRequestDispatcher("/contactAdded.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/contactAdded.jsp");
 		rd.forward(request, response);
 		
 	}

@@ -17,7 +17,7 @@ public class ContactListLogic implements Logic {
 		
 		request.setAttribute("contacts", contacts);
 		
-		return "contactListJSTL.jsp";
+		return "WEB-INF/jsp/contactListJSTL.jsp";
 	}
 
 }
