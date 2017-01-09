@@ -3,9 +3,9 @@
 
 <%--Created by Eduardo Geralde Neto
 
-This contact list uses EL (Expression Language) and JSTL, to do almost the same thing of the contact 
-List with Scriplet. Notice that code we do not mix HTML and Java anymore, making the code more elegant,
-easily to read and maintain. --%>
+This contact list uses EL (Expression Language) and JSTL, to do almost the same thing of the contact  List 
+with Scriplet that we did. Notice that code don't mix HTML and Java anymore, making the code more 
+elegant, easily to read and maintain. --%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -27,6 +27,7 @@ easily to read and maintain. --%>
 			<td>Email</td>
 			<td>Address</td>
 			<td>Date of Birth</td>
+			<td>Action</td>
 		</tr>
 		<!--Goes through the contacts list creating table rows -->
 		<c:forEach var="contact" items="${dao.list}" varStatus="id">
@@ -48,6 +49,10 @@ easily to read and maintain. --%>
 				<td align="center">
 				<!--Formatting date for the pattern that we want -->
 				<fmt:formatDate value="${contact.birthDate.time}" pattern="dd-MM-yyyy" /> 
+				</td>
+				<td>
+					<!--Send for our ControllerServlet which logic run by passing parameters -->
+					<a href="mvc?logic=RemoveContactLogic&id=${contact.id }">Remove</a>
 				</td>
 			</tr>
 		</c:forEach>
