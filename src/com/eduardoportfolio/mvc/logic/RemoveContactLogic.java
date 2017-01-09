@@ -10,9 +10,9 @@ import com.eduardoportfolio.jdbc.model.Contact;
  * @author Eduardo Geralde Neto
  * 
  * This implementation of execute method, removes the contact in DB based on the user choose in JSP form.
- * This class represents one of the actions (business rules) that will be instantiated when requested for our 
+ * This class represents one of the actions (business rules) that will be instantiated when requested by our 
  * ControllerServlet. Notice that the execute() method returns a string after executing its logic, indicating
- * to our ControllerServlet for which JSP it should dispatch.
+ * to our ControllerServlet to execute the ContactListLogic.
  */
 
 public class RemoveContactLogic implements Logic {
@@ -30,7 +30,7 @@ public class RemoveContactLogic implements Logic {
 		
 		System.out.println("Contact removed...");
 		
-		return "contactListJSTL.jsp";
+		return "mvc?logic=ContactListLogic";
 	}
 
 }
