@@ -5,6 +5,13 @@ import java.sql.SQLException;
 
 import com.eduardoportfolio.jdbc.ConnectionFactory;
 
+/**
+ * @author Eduardo Geralde Neto
+ * 
+ * This class test if the ConnectionFactory class through the getConnection() method is opening a 
+ * connection.
+ */
+
 public class ConnectionTest {
 
 	public static void main(String[] args) throws SQLException {

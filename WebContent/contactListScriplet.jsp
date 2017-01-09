@@ -1,19 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%--Created by Eduardo Geralde Neto
-After pass through the Servlets, where it was mixing Java with HTML. The reading was confusing
-and the code difficult to maintain . Now let's have a look through the JSP with scriplets. There are still
- many applications on the market today made entirely using scriptlets with some code in the middle of 
- HTML. In this simple case, JSP still mixing HTML with Java, but we can evolve much more, at the point 
- that we won't do it anymore --%>
 
-<%@ page
-	import="java.util.*, 
-						com.eduardoportfolio.jdbc.dao.*, 
-						com.eduardoportfolio.jdbc.model.*,
-						java.text.*"%>
+In this JSP we use Scriplets to see how we can put Java and HTML together just with a simple tag, but this
+kind of mixing Java and HTML turn the code hard to read and maintain. If our Front End Team has to 
+make some changes or improvements, they will have to know Java very well or we will be in trouble. 
+We have to understand that code, because there are many applications on the market today that still made
+entirely using Scriptlets with code in the middle of HTML.--%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*, java.text.*, com.eduardoportfolio.jdbc.dao.*, 
+																		com.eduardoportfolio.jdbc.model.*"%>
+					
+<!--Importing header  -->
+<c:import url="header.jsp"/>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -51,6 +53,7 @@ thead th {
 			}
 		%>
 	</table>
-
+	<!--Importing footer -->
+	<c:import url="footer.jsp"/>
 </body>
 </html>

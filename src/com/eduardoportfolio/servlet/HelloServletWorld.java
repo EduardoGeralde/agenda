@@ -10,6 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebInitParam;
 
+/**
+ * @author Eduardo Geralde Neto
+ * 
+ * This class is a simple example of generating HTML with PrintWriter, it also use initParams to pass some
+ * parameters in the Servlet initialization, but we don't want to put HTML with Java together, lets use JSP
+ * to do that.
+ */
 
 @WebServlet(name = "HelloServlet", urlPatterns = {"/hello","/holla"},
 initParams = { @WebInitParam(name= "param1", value= "Hello Servlet "),

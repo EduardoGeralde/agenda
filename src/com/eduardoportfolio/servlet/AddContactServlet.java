@@ -27,22 +27,22 @@ import com.eduardoportfolio.jdbc.model.Contact;
  * application only gives us an idea of some possible ways and tools. Let's evolve our application by 
  * separating actions (business rules) into different classes with the same Logic interface. 
  * We will also create a Servlet Controller to control the flow of actions, and after executing the action, 
- * will make it redirects to JSP pages.
+ * will redirects to a JSP pages.
  */
 
 @WebServlet("/addContact")
 public class AddContactServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
-	//this method allows us to load  in the initialization of the servlet some files of 
-	//configuration of the application, or something else needed
+	//This method allows us to load  in the initialization of the servlet some files of configuration 
+	//of the application, or something else needed.
 	@Override
 	public void init (ServletConfig config) throws ServletException {
 		super.init(config);
 		log("Starting the servlet");
 	}
 	
-	//we  can also release possible resources that we are holding
+	//We  can also release possible resources that we are holding
 	@Override
 	public void destroy(){
 		super.destroy();
@@ -50,20 +50,20 @@ public class AddContactServlet extends HttpServlet{
 	}
 	
 	@Override
-	//instead using service, the doPost method only accept post methods (inside body)
+	//Instead using service, the doPost method only accept post methods (inside body)
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 										throws ServletException, IOException {
-		//search the writer
+		//Search the writer
 		PrintWriter out = response.getWriter();
 		
-		//search for parameters in the request
+		//Search for parameters in the request
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String email = request.getParameter("email");
 		String dateInText = request.getParameter("birthDate");
 		Calendar birthDate = null;
 		
-		//doing the date conversion
+		//Doing the date conversion
 		try{
 			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dateInText);
 			birthDate = Calendar.getInstance();
@@ -71,31 +71,29 @@ public class AddContactServlet extends HttpServlet{
 			
 		} catch (ParseException e){
 			out.println("Date Conversion Error");
-			return;  //stop the method execution
+			return;
 		}
 		
-		//mounts a contact object
+		//Mounts a contact object
 		Contact contact = new Contact();
 		contact.setName(name);
 		contact.setAddress(address);
 		contact.setEmail(email);
 		contact.setBirthDate(birthDate);
 		
-		//persist contact
+		//Persist contact
 		ContactDao dao = new ContactDao();
 		dao.create(contact);
 		
-		//print the name of the contact that was added, in HTML
+		//Removing HTML code to dispatch to a JSP that will do the job.
+		
 		//out.println("<html>");
 		//out.println("<body>");
 		//out.println("Contact " + contact.getName() + " added successfully ");
 		//out.println("</body>");
 		//out.println("</html>");
 		
-		//but, we are mixing HTML with Java. Let's improve this code
-		
-		//Now we going to redirect for another JSP and delete all HTML
-		//in this code. Let's put java in Servlets and HTML in JSP.
+		//Dispatching to a JSP
 		RequestDispatcher rd = request.getRequestDispatcher("/contactAdded.jsp");
 		rd.forward(request, response);
 		

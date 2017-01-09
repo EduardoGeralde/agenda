@@ -2,6 +2,12 @@ package com.eduardoportfolio.jdbc.model;
 
 import java.util.Calendar;
 
+/**
+ * @author Eduardo Geralde Neto
+ * 
+ * This is a simple Java Bean contact model (POJO)
+ */
+
 public class Contact {
 	
 	private Long id;

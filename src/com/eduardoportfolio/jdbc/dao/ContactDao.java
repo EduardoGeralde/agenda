@@ -12,31 +12,40 @@ import com.eduardoportfolio.jdbc.ConnectionFactory;
 import com.eduardoportfolio.jdbc.exception.DAOException;
 import com.eduardoportfolio.jdbc.model.Contact;
 
+/**
+ * @author Eduardo Geralde Neto
+ * 
+ * This ContactDao class has our CRUD. This represents our basics methods of persistent storage.
+ * The only responsible to access and change our data in BD.
+ */
+
+
 public class ContactDao {
 
 	private Connection connection;
 
-	//getting the connection in the constructor
+	//Getting the connection in the constructor
 	public ContactDao() {
 		this.connection = new ConnectionFactory().getConnection();
 	}
 
+	//Creating (add) contact in DB
 	public void create(Contact contact) {
 		
-		//string with SQL command
+		//String with SQL command
 		String sql = "insert into contacts (name, email, address, birthDate) values (?,?,?,?)";
 
 		try { 
-			// prepare statement for insertion
+			//Prepare statement for insertion
 			PreparedStatement stmt = connection.prepareStatement(sql);
 
-			// set the values
+			//Set the values
 			stmt.setString(1, contact.getName());
 			stmt.setString(2, contact.getEmail());
 			stmt.setString(3, contact.getAddress());
 			stmt.setDate(4, new Date(contact.getBirthDate().getTimeInMillis()));
 
-			// execute preparedStatement
+			//Execute PreparedStatement
 			stmt.execute();
 
 			stmt.close();
@@ -47,34 +56,35 @@ public class ContactDao {
 		} 
 	}
 
+	//List all contacts in DB
 	public List<Contact> getList() {
 		try {
-			// creating a list of contacts
+			//Creating a list of contacts
 			List<Contact> contacts = new ArrayList<Contact>();
 
-			// prepare statement for list
+			//Prepare statement for list
 			PreparedStatement stmt = this.connection.prepareStatement("select * from contacts");
 
-			// execute a select
+			//Execute a select
 			ResultSet rs = stmt.executeQuery();
 
-			// iterate in ResultSet
+			//Iterate in ResultSet
 			while (rs.next()) {
 
 				Contact contact = new Contact();
 
-				// filling Contact Object
+				//Filling Contact Object
 				contact.setId(rs.getLong("id"));
 				contact.setName(rs.getString("name"));
 				contact.setEmail(rs.getString("email"));
 				contact.setAddress(rs.getString("address"));
 
-				// mounting the date through calendar
+				//Mounting the date through calendar
 				Calendar data = Calendar.getInstance();
 				data.setTime(rs.getDate("birthdate"));
 				contact.setBirthDate(data);
 
-				// adding object to list
+				//Adding object to list
 				contacts.add(contact);
 			}
 
@@ -89,19 +99,20 @@ public class ContactDao {
 		}
 	}
 
+	//List contact by given id
 	public Contact selectById(int id) {
 
 		Contact contact = new Contact();
 		
 		try {
-			// prepare statement for list
+			//Prepare statement for list
 			PreparedStatement stmt = this.connection
 					.prepareStatement("select * from contacts where id = " + id);
 
-			// execute a select
+			//Execute a select
 			ResultSet rs = stmt.executeQuery();
 
-			// filling Contact Object
+			//Filling Contact Object
 			if (rs.next()) {
 				contact.setId(rs.getLong("id"));
 				contact.setName(rs.getString("name"));
@@ -119,16 +130,17 @@ public class ContactDao {
 		}
 	}
 	
+	//Update contact in DB
 	public void update (Contact contact){
 		
 		//String with SQL command
 		String sql = "update contacts set name=?, email=?, address=?, birthdate=? where id=?";
 		
 		try{
-			// prepare statement for update
+			//Prepare statement for update
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
 			
-			// set the values
+			//Set the values
 			stmt.setString(1, contact.getName());
 			stmt.setString(2, contact.getEmail());
 			stmt.setString(3, contact.getAddress());
@@ -145,13 +157,14 @@ public class ContactDao {
 		}
 	}
 	
+	//Delete contact of the DB
 	public void delete(Contact contact){
 		
 		try{
-			// prepare statement for delete
+			//Prepare statement for delete
 			PreparedStatement stmt = connection.prepareStatement("delete from contacts where id=?");
 			
-			// set the values
+			//Set the values
 			stmt.setLong(1, contact.getId());
 			
 			stmt.execute();
