@@ -19,8 +19,6 @@ elegant, easily to read and maintain. --%>
 <title>Contact List</title>
 </head>
 <body>
-	<!--Create a DAO -->
-	<jsp:useBean id="dao" class="com.eduardoportfolio.jdbc.dao.ContactDao" />
 	<table border="1" width="100%">
 		<tr bgcolor="ff6600" align="center">
 			<td>Name</td>
@@ -30,7 +28,7 @@ elegant, easily to read and maintain. --%>
 			<td>Action</td>
 		</tr>
 		<!--Goes through the contacts list creating table rows -->
-		<c:forEach var="contact" items="${dao.list}" varStatus="id">
+		<c:forEach var="contact" items="${contacts}" varStatus="id">
 			<!--Using varStatus="id" to toggle the color of lines -->
 			<tr bgcolor="#${id.count % 2 == 0 ? 'c0c0c0' : 'ffffff' }">
 				<td>${contact.name}</td>
