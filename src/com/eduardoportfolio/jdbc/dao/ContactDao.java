@@ -100,7 +100,7 @@ public class ContactDao {
 	}
 
 	//List contact by given id
-	public Contact selectById(int id) {
+	public Contact selectById(Long id) {
 
 		Contact contact = new Contact();
 		
@@ -118,6 +118,11 @@ public class ContactDao {
 				contact.setName(rs.getString("name"));
 				contact.setEmail(rs.getString("email"));
 				contact.setAddress(rs.getString("address"));
+				
+				//Mounting the date through calendar
+				Calendar data = Calendar.getInstance();
+				data.setTime(rs.getDate("birthdate"));
+				contact.setBirthDate(data);
 			}
 			
 			rs.close();
