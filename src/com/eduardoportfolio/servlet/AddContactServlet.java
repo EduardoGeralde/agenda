@@ -63,7 +63,7 @@ public class AddContactServlet extends HttpServlet{
 		String dateInText = request.getParameter("birthDate");
 		Calendar birthDate = null;
 		
-		//Doing the date conversion
+		//Date conversion
 		try{
 			Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dateInText);
 			birthDate = Calendar.getInstance();
