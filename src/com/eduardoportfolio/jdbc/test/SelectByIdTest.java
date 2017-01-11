@@ -17,7 +17,7 @@ public class SelectByIdTest {
 		
 		ContactDao dao = new ContactDao();
 		
-		contact = dao.selectById(1);
+		contact = dao.selectById((long) 1);
 		
 		System.out.println(contact.getName());
 		System.out.println(contact.getEmail());
