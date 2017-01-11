@@ -22,12 +22,12 @@ This JSP lists all contacts from the DB more easily and readable using display t
 
 		<!-- Using displayTag to show the contact list with CSS file -->
 		<display:table name="contacts" sort ="list" pagesize="10" class="contactList.css">
-			<display:column property="name" title="Name" />
+			<display:column property="name" title="Name" headerClass="r"/>
 			<display:column property="email" title="Email"/>
 			<display:column property="address" title="Address" />
-			<display:column property="birthDate.time" title= "Date of Birth" format="{0,date,dd-MM-yyyy}"  />
-			<display:column property="id" title="Remove" href="mvc?logic=RemoveLogic" paramId="id"/>
-			<display:column property="id" title="Update" href="mvc?logic=UpdateLogic" paramId="id"/>
+			<display:column property="birthDate.time" title= "Date of Birth" format="{0,date,dd-MM-yyyy}" style="text-align:center;" />
+			<display:column property="id" title="Remove ID" href="mvc?logic=RemoveLogic" paramId="id" style="text-align:center;"/>
+			<display:column property="id" title="Update ID" href="mvc?logic=UpdateLogic" paramId="id" style="text-align:center;"/>
 		</display:table>
 		
 		<a href="mvc?logic=AddLogic">Add Contact</a>
