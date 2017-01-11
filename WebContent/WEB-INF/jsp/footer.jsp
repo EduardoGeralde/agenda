@@ -6,13 +6,11 @@
 This is a simple JSP to be our default footer in any other JSP page--%>
 
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-</head>
-<body>
-
-<hr />
-Copyright 2016 - All rights reserved
-
-</body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body>
+	<hr />
+		Copyright 2016 - All rights reserved
+	</body>
 </html>

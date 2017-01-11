@@ -8,17 +8,13 @@ This is a simple JSP to be our default header in any other JSP page--%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Contact List</title>
-</head>
-<body>
-
-<!-- absolute path with c:url -->
-<img src="<c:url value="/images/scheduleLogo.jpeg"/>"/>
-<h2> Contacts schedule of Eduardo Geralde Neto</h2>
-
-<hr />
-
-</body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body>
+		<!-- absolute path with c:url -->
+		<img src="<c:url value="/images/scheduleLogo.jpeg"/>"/>
+		<h2> Contacts schedule of Eduardo Geralde Neto</h2>
+		<hr />
+	</body>
 </html>
