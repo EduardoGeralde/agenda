@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+h2,h3,h4,h5,h6 {
+	text-align:center;
+	color: blue;
+	font-family:Helvetica;
+}
+
+#d1 {
+	font-size:x-large;
+	font-weight:bolder;
+	font-family:Helvetica;
+	color:red;
+	margin-left: 48%;
+}
+
