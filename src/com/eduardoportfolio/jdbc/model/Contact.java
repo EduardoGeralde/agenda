@@ -5,7 +5,7 @@ import java.util.Calendar;
 /**
  * @author Eduardo Geralde Neto
  * 
- * This is a simple Java Bean contact model (POJO)
+ * Java Bean contact model (POJO)
  */
 
 public class Contact {

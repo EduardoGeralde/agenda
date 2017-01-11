@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @author Eduardo Geralde Neto
  * 
- * This class is a simple example that help understand that in according to the specification of Servlets, by 
- * default, there is only a single instance of each Servlet declared. When the request arrives to the Servlet, 
- * a new THREAD is opened on that instance that already exists.
- * Therefore, sharing objects between threads can bring us serious problems.
+ * This class is a simple example to understand that in according to the specification of Servlets, by default,
+ *  there is only a single instance of each Servlet declared. When the request arrives to the Servlet, a new 
+ *  THREAD is opened on that instance that already exists. 
+ *  Therefore, sharing objects between threads can bring us serious problems.
  */
 
 @WebServlet ("/counter")

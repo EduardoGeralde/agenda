@@ -6,7 +6,7 @@ import com.eduardoportfolio.jdbc.model.Contact;
 /**
  * @author Eduardo Geralde Neto
  * 
- * This class test the selection of a contact in DB by a given ID using selectById() method.
+ * This class tests the selection of a contact in DB by a given ID using selectById() method.
  */
 
 public class SelectByIdTest {

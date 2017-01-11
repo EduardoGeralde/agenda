@@ -3,7 +3,7 @@
 
 <%--Created by Eduardo Geralde Neto
 
-This is a simple JSP to be our default footer in any other JSP page--%>
+This is a simple JSP to be our default footer in other JSP page--%>
 
 <html>
 	<head>

@@ -3,7 +3,7 @@
 
 <%--Created by Eduardo Geralde Neto
 
-This is a simple JSP to be our default header in any other JSP page--%>
+This is a simple JSP to be our default header in other JSP page--%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 

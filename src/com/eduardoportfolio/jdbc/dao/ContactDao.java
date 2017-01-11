@@ -79,10 +79,10 @@ public class ContactDao {
 				contact.setEmail(rs.getString("email"));
 				contact.setAddress(rs.getString("address"));
 
-				//Mounting the date through calendar
-				Calendar data = Calendar.getInstance();
-				data.setTime(rs.getDate("birthdate"));
-				contact.setBirthDate(data);
+				//Preparing the format of date to calendar
+				Calendar date = Calendar.getInstance();
+				date.setTime(rs.getDate("birthdate"));
+				contact.setBirthDate(date);
 
 				//Adding object to list
 				contacts.add(contact);
@@ -130,6 +130,7 @@ public class ContactDao {
 			connection.close();
 
 			return contact;
+			
 		} catch (SQLException e) {
 			throw new DAOException(e);
 		}

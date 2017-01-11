@@ -4,10 +4,10 @@
 <%--Created by Eduardo Geralde Neto
 
 In this JSP we use Scriplets to see how we can put Java and HTML together just with a simple tag, but this
-kind of mixing Java and HTML turn the code hard to read and maintain. If our Front End Team has to 
-make some changes or improvements, they will have to know Java very well or we will be in trouble. 
-We have to understand that code, because there are many applications on the market today that still made
-entirely using Scriptlets with code in the middle of HTML.--%>
+kind of mixing Java and HTML turn the code hard to read and maintain. For example, If our Front End 
+Team has to make some changes or improvements, they will have to know Java well or they could not do it.
+ 
+But, we have to know it, because there are applications that still using Scriptlets with HTML.--%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="java.util.*, java.text.*, com.eduardoportfolio.jdbc.dao.*, 

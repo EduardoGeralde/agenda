@@ -3,9 +3,9 @@
 
 <%--Created by Eduardo Geralde Neto
 
-This contact list uses EL (Expression Language) and JSTL, to do almost the same thing of the contact  List 
-with Scriplet that we did. Notice that code don't mix HTML and Java anymore, making the code more 
-elegant, easily to read and maintain. --%>
+This contact list uses EL (Expression Language) and JSTL, to do almost the same thing of the 
+contactListScriplet that we create. Notice that code don't mix HTML and Java anymore, making the code 
+more elegant, easily to read and maintain. But we can improve much more, using tags to facilitate our work--%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -50,7 +50,7 @@ elegant, easily to read and maintain. --%>
 					</td>
 					<td>
 						<!--Send for our ControllerServlet which logic run by passing parameters -->
-						<a href="mvc?logic=RemoveContactLogic&id=${contact.id }">Remove</a>
+						<a href="mvc?logic=RemoveLogic&id=${contact.id }">Remove</a>
 					</td>
 				</tr>
 			</c:forEach>

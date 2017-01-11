@@ -5,7 +5,7 @@ import java.sql.SQLException;
 /**
  * @author Eduardo Geralde Neto
  * 
- * DAOException was created only to use in our CRUD methods in ContactDao.
+ * DAOException was created to use in our CRUD methods in ContactDao.
  */
 
 public class DAOException extends RuntimeException {

@@ -6,10 +6,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,21 +19,25 @@ import com.eduardoportfolio.jdbc.model.Contact;
 /**
  * @author Eduardo Geralde Neto
  * 
+ * This class just give us a example to demonstrate some tools that can be used in a Servlet. Here, this tools
+ *  don't really make any sense, like "urlPatterns", "initParams", "init", "destroy", "doPost", "PrintWriter".
+ * 
  * This Servlet was created to show how a Servlet could work, generating HTML through PrintWriter. 
  * However, mixing HTML with Java is not recommended because it makes difficult to read and 
- * maintain the application code. Let's then remove the HTML code and we'll redirect with 
- * RequestDispatcher to a JSP page that will generate all the HTML code that we need. This example 
- * application only gives us an idea of some possible ways and tools. Let's evolve our application by 
- * separating actions (business rules) into different classes with the same Logic interface. 
- * We will also create a Servlet Controller to control the flow of actions, and after executing the action, 
- * will redirects to a JSP pages.
+ * maintain the code. In fact, we have to remove the HTML code and redirect with RequestDispatcher to 
+ * a JSP page that will generate all the HTML code that we need. This example application only gives us 
+ * an idea of some possible ways and tools.
  */
 
-@WebServlet("/addContact")
+//Passing parameters in the initialization
+@WebServlet(name = "AddServlet", urlPatterns = {"/addContact","/add"},
+			initParams = { @WebInitParam(name= "param1", value= "Contact "),
+						@WebInitParam(name="param2", value=" added successfully")})
+
 public class AddContactServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
-	//This method allows us to load  in the initialization of the servlet some files of configuration 
+	//This method allows us to load  in the initialization of the Servlet some files of configuration 
 	//of the application, or something else needed.
 	@Override
 	public void init (ServletConfig config) throws ServletException {
@@ -74,28 +77,25 @@ public class AddContactServlet extends HttpServlet{
 			return;
 		}
 		
-		//Mounts a contact object
+		//Filling a contact object
 		Contact contact = new Contact();
 		contact.setName(name);
 		contact.setAddress(address);
 		contact.setEmail(email);
 		contact.setBirthDate(birthDate);
 		
-		//Persist contact
+		//Persisting contact
 		ContactDao dao = new ContactDao();
 		dao.create(contact);
 		
-		//Removing HTML code to dispatch to a JSP that will do the job.
-		
-		//out.println("<html>");
-		//out.println("<body>");
-		//out.println("Contact " + contact.getName() + " added successfully ");
-		//out.println("</body>");
-		//out.println("</html>");
-		
-		//Dispatching to a JSP
-		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/contactAdded.jsp");
-		rd.forward(request, response);
+		//Generating HTML using PrintWriter, bad practice, mixing with Java.
+		out.println("<html>");
+		out.println("<body>");
+		out.println(getServletConfig().getInitParameter("param1"));
+		out.println(contact.getName());
+		out.println(getServletConfig().getInitParameter("param2"));
+		out.println("</body>");
+		out.println("</html>");
 		
 	}
 	

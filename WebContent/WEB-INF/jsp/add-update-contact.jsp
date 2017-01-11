@@ -3,12 +3,12 @@
 
 <%--Created by Eduardo Geralde Neto
 
- This JSP is a form to add contact's  attributes and send to our AddContactServlet to do the job. Besides that
- this Servlet uses our created tag with date picker just to show how easy it is--%>
+ This JSP is a form with the contact data to add a new or update an existing one, basing on the action of the
+ logic rules--%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!-- Adding the tag created  -->
+<!-- Adding the tag created  with datePicker-->
 <%@ taglib tagdir="/WEB-INF/tags" prefix="ed" %>
 
 <!-- Importing header  -->

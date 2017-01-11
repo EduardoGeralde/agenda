@@ -9,7 +9,7 @@ import com.eduardoportfolio.jdbc.model.Contact;
 /**
  * @author Eduardo Geralde Neto
  * 
- * This class test if the method getList() is returning a contact list with all contacts in DB.
+ * This class tests if the method getList() is returning a contact list with all contacts in DB.
  */
 
 public class ListTest {
@@ -23,7 +23,7 @@ public class ListTest {
 		//Getting the List
 		List<Contact> contacts = dao.getList();
 		
-		//Iterating to create a list of all contacts
+		//Iterating to show all contacts
 		for (Contact contact : contacts) {
 			System.out.println("Nome: "+ contact.getName());
 			System.out.println("Email: "+ contact.getEmail());
