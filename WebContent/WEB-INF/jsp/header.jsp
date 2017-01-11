@@ -14,7 +14,7 @@ This is a simple JSP to be our default header in any other JSP page--%>
 	<body>
 		<!-- absolute path with c:url -->
 		<img src="<c:url value="/images/scheduleLogo.jpeg"/>"/>
-		<h2> Contacts schedule of Eduardo Geralde Neto</h2>
+		<h1> Contacts schedule of Eduardo Geralde Neto</h1>
 		<hr />
 	</body>
 </html>

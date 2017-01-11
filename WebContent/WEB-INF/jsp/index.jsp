@@ -10,17 +10,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
 <title>Welcome to the Schedule</title>
 </head>
 <body>
-	<h1>Welcome to the Eduardo's schedule</h1>
 	<h2>Welcome to the Eduardo's schedule</h2>
 	<h3>Welcome to the Eduardo's schedule</h3>
 	<h4>Welcome to the Eduardo's schedule</h4>
 	<h5>Welcome to the Eduardo's schedule</h5>
 	<h6>Welcome to the Eduardo's schedule</h6>
 
+	<div id="d1">
 	<a href="mvc?logic=ContactListLogic">Entrar</a>
+	</div>
 	<!-- importing footer -->
 	<c:import url="/WEB-INF/jsp/footer.jsp" />
 </body>
