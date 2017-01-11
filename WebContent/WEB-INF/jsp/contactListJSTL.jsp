@@ -11,51 +11,51 @@ elegant, easily to read and maintain. --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!--Importing header  -->
-<c:import url="header.jsp"/>
+<c:import url="/WEB-INF/jsp/header.jsp"/>
 
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Contact List</title>
-</head>
-<body>
-	<table border="1" width="100%">
-		<tr bgcolor="ff6600" align="center">
-			<td>Name</td>
-			<td>Email</td>
-			<td>Address</td>
-			<td>Date of Birth</td>
-			<td>Action</td>
-		</tr>
-		<!--Goes through the contacts list creating table rows -->
-		<c:forEach var="contact" items="${contacts}" varStatus="id">
-			<!--Using varStatus="id" to toggle the color of lines -->
-			<tr bgcolor="#${id.count % 2 == 0 ? 'c0c0c0' : 'ffffff' }">
-				<td>${contact.name}</td>
-				<td>
-				<!--If contact has email, insert link to it, if  not, show  "contact missing email" in contact list-->
-				<c:choose>
-					<c:when test="${not empty contact.email}">
-					<a href="mailto:${contact.email}">${contact.email}</a>
-					</c:when>
-					<c:otherwise>
-					Contact missing email
-					</c:otherwise>
-				</c:choose>
-				</td>
-				<td>${contact.address}</td>
-				<td align="center">
-				<!--Formatting date for the pattern that we want -->
-				<fmt:formatDate value="${contact.birthDate.time}" pattern="dd-MM-yyyy" /> 
-				</td>
-				<td>
-					<!--Send for our ControllerServlet which logic run by passing parameters -->
-					<a href="mvc?logic=RemoveContactLogic&id=${contact.id }">Remove</a>
-				</td>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Contact List</title>
+	</head>
+	<body>
+		<table border="1" width="100%">
+			<tr bgcolor="ff6600" align="center">
+				<td>Name</td>
+				<td>Email</td>
+				<td>Address</td>
+				<td>Date of Birth</td>
+				<td>Action</td>
 			</tr>
-		</c:forEach>
-	</table>
-	<!--Importing footer -->
-	<c:import url="footer.jsp"/>
-</body>
+			<!--Goes through the contacts list creating table rows -->
+			<c:forEach var="contact" items="${contacts}" varStatus="id">
+				<!--Using varStatus="id" to toggle the color of lines -->
+				<tr bgcolor="#${id.count % 2 == 0 ? 'c0c0c0' : 'ffffff' }">
+					<td>${contact.name}</td>
+					<td>
+						<!--If contact has email, insert link to it, if  not, show  "contact missing email" in contact list-->
+						<c:choose>
+							<c:when test="${not empty contact.email}">
+								<a href="mailto:${contact.email}">${contact.email}</a>
+							</c:when>
+							<c:otherwise>
+								Contact missing email
+							</c:otherwise>
+						</c:choose>
+					</td>
+					<td>${contact.address}</td>
+					<td align="center">
+						<!--Formatting date for the pattern that we want -->
+						<fmt:formatDate value="${contact.birthDate.time}" pattern="dd-MM-yyyy" /> 
+					</td>
+					<td>
+						<!--Send for our ControllerServlet which logic run by passing parameters -->
+						<a href="mvc?logic=RemoveContactLogic&id=${contact.id }">Remove</a>
+					</td>
+				</tr>
+			</c:forEach>
+		</table>
+		<!--Importing footer -->
+		<c:import url="/WEB-INF/jsp/footer.jsp"/>
+	</body>
 </html>
