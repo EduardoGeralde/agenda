@@ -1,5 +1,6 @@
 
 table { 
+	header: align center;
 	border: 1px solid #666;
     width: 100%;
 	margin: 20px 0 20px 0 !important;
@@ -11,8 +12,9 @@ th,td {
 	vertical-align: top;
 }
 
-thead tr {
+thead tr th{
 	background-color: #fc0;
+	text-align:center;
 }
 
 tr.tableRowEven,tr.even {
