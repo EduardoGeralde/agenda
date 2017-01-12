@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import com.eduardoportfolio.jdbc.ConnectionFactory;
 import com.eduardoportfolio.jdbc.exception.DAOException;
 import com.eduardoportfolio.jdbc.model.Contact;
 

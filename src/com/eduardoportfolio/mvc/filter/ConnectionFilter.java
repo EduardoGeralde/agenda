@@ -15,8 +15,9 @@ import com.eduardoportfolio.jdbc.ConnectionFactory;
 /**
  * @author Eduardo Geralde Neto
  * 
- * This class is a filter, which provides a connection for each requisition, and just close this connection 
- * in the end (return) of this resource.
+ * This class is a filter, which provides a connection for each requisition, and just close this connection at 
+ * the end (return) of this resource. Inversion of control, Filter created for dependency injection 
+ * (connection) in DAO.
  */
 
 @WebFilter("/*")
