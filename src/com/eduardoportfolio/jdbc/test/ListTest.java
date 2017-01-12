@@ -1,8 +1,10 @@
 package com.eduardoportfolio.jdbc.test;
 
+import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import com.eduardoportfolio.jdbc.ConnectionFactory;
 import com.eduardoportfolio.jdbc.dao.ContactDao;
 import com.eduardoportfolio.jdbc.model.Contact;
 
@@ -16,7 +18,10 @@ public class ListTest {
 
 	public static void main(String[] args) {
 		
-		ContactDao dao = new ContactDao();
+		//Getting the connection
+		Connection connection = new ConnectionFactory().getConnection();
+				
+		ContactDao dao = new ContactDao(connection);
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
 		

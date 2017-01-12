@@ -1,6 +1,9 @@
 package com.eduardoportfolio.jdbc.test;
 
+import java.sql.Connection;
 import java.util.Calendar;
+
+import com.eduardoportfolio.jdbc.ConnectionFactory;
 import com.eduardoportfolio.jdbc.dao.ContactDao;
 import com.eduardoportfolio.jdbc.model.Contact;
 
@@ -21,8 +24,11 @@ public class InsertionTest {
 		contact.setAddress("Everton Street, 1200 - Glowville");
 		contact.setBirthDate(Calendar.getInstance());
 		
+		//Getting the connection
+		Connection connection = new ConnectionFactory().getConnection();
+		
 		//Record in this connection
-		ContactDao dao = new ContactDao();
+		ContactDao dao = new ContactDao(connection);
 		
 		//Method to create
 		dao.create(contact);
