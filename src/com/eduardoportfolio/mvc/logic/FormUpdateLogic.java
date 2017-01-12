@@ -1,5 +1,7 @@
 package com.eduardoportfolio.mvc.logic;
 
+import java.sql.Connection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -24,8 +26,11 @@ public class FormUpdateLogic implements Logic {
 		//Getting ID
 		long id = Long.parseLong(request.getParameter("id"));
 
+		//Getting the connection, hanging on the request (from the filter)
+		Connection connection = (Connection) request.getAttribute("connection");
+		
 		//Selecting contact by ID
-		ContactDao dao = new ContactDao();
+		ContactDao dao = new ContactDao(connection);
 		Contact contact = dao.selectById(id);
 		
 		//Setting request's attribute

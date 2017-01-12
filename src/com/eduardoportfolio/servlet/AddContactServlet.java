@@ -2,6 +2,7 @@ package com.eduardoportfolio.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -84,8 +85,11 @@ public class AddContactServlet extends HttpServlet{
 		contact.setEmail(email);
 		contact.setBirthDate(birthDate);
 		
+		//Getting the connection, hanging on the request (from the filter)
+		Connection connection = (Connection) request.getAttribute("connection");
+		
 		//Persisting contact
-		ContactDao dao = new ContactDao();
+		ContactDao dao = new ContactDao(connection);
 		dao.create(contact);
 		
 		//Generating HTML using PrintWriter, bad practice, mixing with Java.

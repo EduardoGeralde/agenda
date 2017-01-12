@@ -1,5 +1,6 @@
 package com.eduardoportfolio.mvc.logic;
 
+import java.sql.Connection;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,10 @@ public class ContactListLogic implements Logic {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		List<Contact> contacts = new ContactDao().getList();
+		//Getting the connection, hanging on the request (from the filter)
+		Connection connection = (Connection) request.getAttribute("connection");
+		
+		List<Contact> contacts = new ContactDao(connection).getList();
 		
 		//Embedding the list
 		request.setAttribute("contacts", contacts);

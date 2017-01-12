@@ -1,5 +1,7 @@
 package com.eduardoportfolio.mvc.logic;
 
+import java.sql.Connection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,8 +27,11 @@ public class RemoveLogic implements Logic {
 		Contact contact = new Contact ();
 		contact.setId(id);
 		
+		//Getting the connection, hanging on the request (from the filter)
+		Connection connection = (Connection) request.getAttribute("connection");
+		
 		//Removing the respective contact
-		ContactDao dao = new ContactDao();
+		ContactDao dao = new ContactDao(connection);
 		dao.delete(contact);
 		
 		System.out.println("Contact removed...");

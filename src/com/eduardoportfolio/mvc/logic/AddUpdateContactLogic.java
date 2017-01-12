@@ -1,6 +1,7 @@
 package com.eduardoportfolio.mvc.logic;
 
 import java.io.PrintWriter;
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -54,8 +55,11 @@ public class AddUpdateContactLogic implements Logic {
 		contact.setAddress(request.getParameter("address"));
 		contact.setBirthDate(birthDate);
 		
+		//Getting the connection, hanging on the request (from the filter)
+		Connection connection = (Connection) request.getAttribute("connection");
+		
 		//Creating access 
-		ContactDao dao = new ContactDao();
+		ContactDao dao = new ContactDao(connection);
 		
 		//If contains id, set contact's id and create, otherwise create new contact
 		if (id != null){
