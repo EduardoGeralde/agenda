@@ -23,7 +23,7 @@ public class ContactDao {
 
 	private Connection connection;
 
-	//Getting the connection from the filter (injection of dependencies)
+	//Injection of dependencies, inversion control
 	public ContactDao(Connection connection) {
 		this.connection = connection;
 	}
@@ -48,7 +48,6 @@ public class ContactDao {
 			stmt.execute();
 
 			stmt.close();
-			connection.close();
 
 		} catch (SQLException e) {
 			throw new DAOException(e);
@@ -89,7 +88,6 @@ public class ContactDao {
 
 			rs.close();
 			stmt.close();
-			connection.close();
 
 			return contacts;
 
@@ -126,7 +124,6 @@ public class ContactDao {
 			
 			rs.close();
 			stmt.close();
-			connection.close();
 
 			return contact;
 			
@@ -155,7 +152,6 @@ public class ContactDao {
 			stmt.execute();
 			
 			stmt.close();
-			connection.close();
 			
 		} catch (SQLException e){
 			throw new DAOException(e);
