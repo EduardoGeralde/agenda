@@ -32,7 +32,7 @@ public class RuntimeFilter implements Filter {
 		//Takes the initial time
 		long initialTime = System.currentTimeMillis();
 		
-		//Point thats mark our execution period
+		//Indicates that request processing must proceed
 		chain.doFilter(request, response);
 		
 		//Takes the final time, when the operation was done
