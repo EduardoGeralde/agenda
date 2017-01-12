@@ -24,9 +24,9 @@ public class ContactDao {
 
 	private Connection connection;
 
-	//Getting the connection in the constructor
-	public ContactDao() {
-		this.connection = new ConnectionFactory().getConnection();
+	//Getting the connection from the filter (injection of dependencies)
+	public ContactDao(Connection connection) {
+		this.connection = connection;
 	}
 
 	//Creating (add) contact in DB
