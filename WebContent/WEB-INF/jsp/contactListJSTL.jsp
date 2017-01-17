@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <%--Created by Eduardo Geralde Neto
 
 This contact list uses EL (Expression Language) and JSTL, to do almost the same thing of the 
 contactListScriplet that we create. Notice that code don't mix HTML and Java anymore, making the code 
 more elegant, easily to read and maintain. But we can improve much more, using tags to facilitate our work--%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!--Importing header  -->
 <c:import url="/WEB-INF/jsp/header.jsp"/>

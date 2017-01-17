@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<%--Created by Eduardo Geralde Neto
-
- This JSP is a form with the contact data to add a new or update an existing one, basing on the action of the
- logic rules--%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!-- Adding the tag created  with datePicker-->
 <%@ taglib tagdir="/WEB-INF/tags" prefix="ed" %>
+
+<%--Created by Eduardo Geralde Neto
+
+ This JSP is a form with the contact data to add a new or update an existing one, basing on the action of the
+ logic rules--%>
 
 <!-- Importing header  -->
 <c:import url="/WEB-INF/jsp/header.jsp" />
