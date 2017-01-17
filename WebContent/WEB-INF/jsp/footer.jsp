@@ -11,6 +11,6 @@ This is a simple JSP to be our default footer in other JSP page--%>
 	</head>
 	<body>
 	<hr />
-		Copyright 2016 - All rights reserved
+		Copyright 2017 - All rights reserved
 	</body>
 </html>
