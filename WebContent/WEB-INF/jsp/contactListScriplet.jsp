@@ -1,20 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.*, java.text.*, java.sql.*, com.eduardoportfolio.jdbc.dao.*, 
+																					     com.eduardoportfolio.jdbc.model.*"%>
+																		
 <%--Created by Eduardo Geralde Neto
 
 In this JSP we use Scriplets to see how we can put Java and HTML together just with a simple tag, but this
 kind of mixing Java and HTML turn the code hard to read and maintain. For example, If our Front End 
 Team has to make some changes or improvements, they will have to know Java well or they could not do it.
- 
-But, we have to know it, because there are applications that still using Scriptlets with HTML.--%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="java.util.*, java.text.*, com.eduardoportfolio.jdbc.dao.*, 
-																		com.eduardoportfolio.jdbc.model.*"%>					
+But, we have to know it, because there are applications that still using Scriptlets with HTML.--%>	
+				
 <!--Importing header  -->
 <c:import url="/WEB-INF/jsp/header.jsp"/>
-
 
 <html>
 	<head>
@@ -38,7 +37,8 @@ But, we have to know it, because there are applications that still using Scriptl
 				<td>Date of Birth</td>
 			</tr>
 				<%
-					ContactDao dao = new ContactDao();
+					Connection connection = (Connection) request.getAttribute("connection");
+					ContactDao dao = new ContactDao(connection);
 					List<Contact> contacts = dao.getList();
 					for (Contact contact : contacts) {
 				%>
