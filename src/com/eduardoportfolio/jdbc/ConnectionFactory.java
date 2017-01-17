@@ -13,12 +13,12 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 	
-	//This method return a connection with mySql DB
 	public Connection getConnection(){
+		
 		try {
-			//Creating new connection
 			Class.forName("com.mysql.jdbc.Driver");
 			return DriverManager.getConnection("jdbc:mysql://localhost/jdbc", "root", "password");
+			
 		} catch (SQLException | ClassNotFoundException e) {
 			throw new RuntimeException (e);
 		}
