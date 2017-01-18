@@ -15,7 +15,7 @@ import com.eduardoportfolio.jdbc.model.Contact;
  * @author Eduardo Geralde Neto
  * 
  * This ContactDao class has our CRUD. This represents our basics methods of persistent storage.
- * The only responsible to access, change, add and remove our data on BD.
+ * The only responsible to access, change, add and remove our data.
  */
 
 
