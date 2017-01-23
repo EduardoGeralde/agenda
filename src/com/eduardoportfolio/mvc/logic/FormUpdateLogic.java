@@ -11,11 +11,11 @@ import com.eduardoportfolio.jdbc.model.Contact;
 /**
 * @author Eduardo Geralde Neto
 * 
-* The logic of update a contact, in fact, is coupled with the add's logic in another logic class. 
+* The update logic, in fact, is coupled with the add logic in another logic class. 
 * This class, select a contact object in BD, just through the id that arrived in the request. Than, it set the 
 * request attribute with this full contact object from BD. This object will be used to fill the update form with
 * the information of the contact we choose. After that, it return as a String, where we want to be 
-* dispatched, to the ControllerServlet.
+* dispatched, for the ControllerServlet.
 */
 
 public class FormUpdateLogic implements Logic {

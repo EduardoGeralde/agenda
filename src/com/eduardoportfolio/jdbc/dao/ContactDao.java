@@ -23,7 +23,7 @@ public class ContactDao {
 
 	private Connection connection;
 
-	//Injection of dependencies, inversion control
+	//Inversion control, connection in the constructor
 	public ContactDao(Connection connection) {
 		this.connection = connection;
 	}
