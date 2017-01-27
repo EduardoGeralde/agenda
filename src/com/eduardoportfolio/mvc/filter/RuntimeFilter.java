@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
  * need to put this logic in all our classes. In this specific case, this filter takes the current time before the 
  * logic/resource, and the time on returning way, when close this logic/resource, then, prints the
  * traced result in the console. Filters are good ways to errors handling, measure execution time, close 
- * doors, etc...
+ * doors, etc..
  */
 
 @WebFilter("/*")
