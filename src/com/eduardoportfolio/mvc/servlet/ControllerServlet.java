@@ -14,7 +14,7 @@ import com.eduardoportfolio.mvc.logic.Logic;
  * @author Eduardo Geralde Neto
  * 
  * This ControllerServlet controls which class to instantiate, based on the parameter "logic" received. 
- * After instantiate, it runs the action (business rule) by the execute method of the this class. 
+ * After instantiate, it runs the action (business rule) by the execute method of the this class.
  * 
  * Finally, this Servlet dispatch to the specified JSP or class that arrives from ours logic classes as a String. 
  * Now all the responsibility to the right action and the correct dispatch is only for the ControllerServlet. 
