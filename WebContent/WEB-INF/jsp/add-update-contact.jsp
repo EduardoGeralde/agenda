@@ -9,7 +9,7 @@
 <%--Created by Eduardo Geralde Neto
 
  This JSP is a form with the contact data to add a new or update an existing one, basing on the action of the
- logic rules--%>
+ logic rules.--%>
 
 <!-- Importing header  -->
 <c:import url="/WEB-INF/jsp/header.jsp" />
