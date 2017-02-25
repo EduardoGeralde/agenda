@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * @author Eduardo Geralde Neto
  * 
  * This ConnectionFactory is responsible to create new connections through the getConnection() method.
- * In this particular case, it returns a mySql connection.
+ * In this particular case, it returns a mySql connection
  */
 
 public class ConnectionFactory {
