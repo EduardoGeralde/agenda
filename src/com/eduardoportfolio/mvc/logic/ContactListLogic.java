@@ -13,7 +13,7 @@ import com.eduardoportfolio.jdbc.model.Contact;
  * @author Eduardo Geralde Neto
  * 
  * The ContactListLogic contains the logic responsible to create a list of all contacts, embed this list in the 
- * request, and return as a String to the ControllerServlet where we want to be dispatched.
+ * request, and return as a String to the ControllerServlet where we want to be dispatched
  */
 
 public class ContactListLogic implements Logic {
