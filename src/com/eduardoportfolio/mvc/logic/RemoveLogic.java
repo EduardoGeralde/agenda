@@ -12,7 +12,7 @@ import com.eduardoportfolio.jdbc.model.Contact;
 * @author Eduardo Geralde Neto
 * 
 * This class contains the logic to remove a contact in BD from a received id in the request, after that, it 
-* return, as a String, where we want to be dispatched, to the ControllerServlet .
+* return, as a String, where we want to be dispatched, to the ControllerServlet 
 */
 
 public class RemoveLogic implements Logic {
