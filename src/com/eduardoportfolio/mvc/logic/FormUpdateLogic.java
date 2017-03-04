@@ -15,7 +15,7 @@ import com.eduardoportfolio.jdbc.model.Contact;
 * This class, select a contact object in BD, just through the id that arrived in the request. Than, it set the 
 * request attribute with this full contact object from BD. This object will be used to fill the update form with
 * the information of the contact we choose. After that, it return as a String, where we want to be 
-* dispatched, for the ControllerServlet
+* dispatched, for the ControllerServlet.
 */
 
 public class FormUpdateLogic implements Logic {
