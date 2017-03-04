@@ -11,7 +11,7 @@ import com.eduardoportfolio.jdbc.model.Contact;
 /**
  * @author Eduardo Geralde Neto
  * 
- * This class tests if the method getList() is returning a contact list with all contacts in DB
+ * This class tests if the method getList() is returning a contact list with all contacts in DB.
  */
 
 public class ListTest {
