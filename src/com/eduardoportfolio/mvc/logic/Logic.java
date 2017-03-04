@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Eduardo Geralde Neto
  * 
  * This is our Interface for all logic classes. The Logic Interface the ControllerServlet can instantiate and
- * execute the logic classes methods through polymorphism.
+ * execute the logic classes methods through polymorphism
  */
 
 public interface Logic {
