@@ -9,7 +9,7 @@ import com.eduardoportfolio.jdbc.ConnectionFactory;
  * @author Eduardo Geralde Neto
  * 
  * This class tests if the ConnectionFactory class through the getConnection() method is opening a 
- * connection
+ * connection.
  */
 
 public class ConnectionTest {
