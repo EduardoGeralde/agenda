@@ -19,7 +19,7 @@ import com.eduardoportfolio.jdbc.model.Contact;
  * This logic class was made to identify if the user wants to add a new contact or just update a exiting one,
  * through the contact's id. If the request comes without id, this logic understand that the user wants to 
  * create a new contact. Instead, if the request comes with the id, this is interpreted as a update. After that,
- * it returns a String to the Controller, where we want to be dispatched.
+ * it returns a String to the Controller, where we want to be dispatched
  */
 
 public class AddUpdateContactLogic implements Logic {
